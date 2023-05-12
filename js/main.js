@@ -10,6 +10,7 @@
 // Trasformare la stringa foto in una immagine effettiva
 // BONUS 2: Organizzare i singoli membri in card/schede
 
+// Creo array con oggetti al suo interno
 const team = [
     {
         'name' : 'Wayne Barnett',
@@ -42,10 +43,21 @@ const team = [
         'photo' : 'barbara-ramos-graphic-designer.jpg'
     }
 ]
+
+// Genero variabile collegata a id container nel DOM
+const elContainer = document.getElementById('container');
+
+
+// Ciclo l'array con for
 for(let i = 0; i < team.length; i++){
     const teamIesimo = team[i];
-    // console.log(teamIesimo);
+
+    // Ciclo i valori dell'oggetto(teamIesimo)
     for(let key in teamIesimo){
-        console.log(teamIesimo[key]);
+        const newCard = document.createElement('div')
+        newCard.classList.add('card');
+        elContainer.append(newCard);
+        newCard.append(teamIesimo[key])                   
+        // (teamIesimo[key]);
     }
 }
