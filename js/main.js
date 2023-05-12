@@ -1,15 +1,3 @@
-// Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
-// Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-// MILESTONE 0:
-// Creare l’array di oggetti con le informazioni fornite.
-// MILESTONE 1:
-// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-// MILESTONE 2:
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
-// BONUS 1:
-// Trasformare la stringa foto in una immagine effettiva
-// BONUS 2: Organizzare i singoli membri in card/schede
-
 // Creo array con oggetti al suo interno
 const team = [
     {
@@ -51,13 +39,31 @@ const elContainer = document.getElementById('container');
 // Ciclo l'array con for
 for(let i = 0; i < team.length; i++){
     const teamIesimo = team[i];
+ 
+    // Creato elemento div classe col-4 e lo appendo a elContainer
+    const colDiv = document.createElement('div');
+    colDiv.classList.add('col-4');
+    elContainer.append(colDiv);
 
-    // Ciclo i valori dell'oggetto(teamIesimo)
-    for(let key in teamIesimo){
-        const newCard = document.createElement('div')
-        newCard.classList.add('card');
-        elContainer.append(newCard);
-        newCard.append(teamIesimo[key])                   
-        // (teamIesimo[key]);
-    }
+    // Creato elemento div classe card e lo appendo a div col-4
+    const newCard = document.createElement('div');
+    newCard.classList.add('cards');
+    colDiv.append(newCard);
+
+    // Creato elemento div per innerHTML immagine oggetto, lo appendo a div cards
+    const imgCard = document.createElement('div');
+    newCard.append(imgCard);
+    imgCard.innerHTML = `<img src="img/${teamIesimo.photo}">`;
+
+    // Creato elemento h5 per nome oggetto e appendo a div cards
+    const newElementName = document.createElement('h5');
+    newCard.append(newElementName);
+    newElementName.append(teamIesimo.name);
+
+    // Creato elemento div per ruolo oggetto e appendo a div cards
+    const newElementRole = document.createElement('div');
+    newCard.append(newElementRole);
+    newElementRole.append(teamIesimo.role);
+
 }
+    
