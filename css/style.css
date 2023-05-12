@@ -1,0 +1,30 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+main{
+    margin: 0 auto;
+    width: 70%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+p{
+    width: 70%;
+    margin: 0 auto;
+}
+/* Delete padding right from row class */
+.container{
+    padding-right: 0;
+}
+#container{
+    height: 600px;
+    background-color: yellowgreen;
+    width: 100%;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+}
+.card{
+    height: 250px;
+    background-color: red;
+}
