@@ -40,30 +40,43 @@ const elContainer = document.getElementById('container');
 for(let i = 0; i < team.length; i++){
     const teamIesimo = team[i];
  
-    // Creato elemento div classe col-4 e lo appendo a elContainer
-    const colDiv = document.createElement('div');
-    colDiv.classList.add('col-4');
-    elContainer.append(colDiv);
+    // Ciclato con innerHTML
 
-    // Creato elemento div classe card e lo appendo a div col-4
-    const newCard = document.createElement('div');
-    newCard.classList.add('cards');
-    colDiv.append(newCard);
+    elContainer.innerHTML += `<div class="col-4">
+                                <div class="cards">
+                                    <img src="img/${teamIesimo.photo}">
+                                    <h5>${teamIesimo.name}</h5>
+                                    <div>${teamIesimo.role}</div>
+                                </div>
+                            </div>`;
 
-    // Creato elemento div per innerHTML immagine oggetto, lo appendo a div cards
-    const imgCard = document.createElement('div');
-    newCard.append(imgCard);
-    imgCard.innerHTML = `<img src="img/${teamIesimo.photo}">`;
 
-    // Creato elemento h5 per nome oggetto e appendo a div cards
-    const newElementName = document.createElement('h5');
-    newCard.append(newElementName);
-    newElementName.append(teamIesimo.name);
+// FATTO CON APPEND, PIU' CONFUSIONARIO IN QUESTO CASO
+// Usare append soprattutto se devi collegare un event listener
 
-    // Creato elemento div per ruolo oggetto e appendo a div cards
-    const newElementRole = document.createElement('div');
-    newCard.append(newElementRole);
-    newElementRole.append(teamIesimo.role);
+//     // Creato elemento div classe col-4 e lo appendo a elContainer
+//     const colDiv = document.createElement('div');
+//     colDiv.classList.add('col-4');
+//     elContainer.append(colDiv);
+
+//     // Creato elemento div classe card e lo appendo a div col-4
+//     const newCard = document.createElement('div');
+//     newCard.classList.add('cards');
+//     colDiv.append(newCard);
+
+//     // Creato elemento div per innerHTML immagine oggetto, lo appendo a div cards
+//     const imgCard = document.createElement('div');
+//     newCard.append(imgCard);
+//     imgCard.innerHTML = `<img src="img/${teamIesimo.photo}">`;
+
+//     // Creato elemento h5 per nome oggetto e appendo a div cards
+//     const newElementName = document.createElement('h5');
+//     newCard.append(newElementName);
+//     newElementName.append(teamIesimo.name);
+
+//     // Creato elemento div per ruolo oggetto e appendo a div cards
+//     const newElementRole = document.createElement('div');
+//     newCard.append(newElementRole);
+//     newElementRole.append(teamIesimo.role);
 
 }
-    
